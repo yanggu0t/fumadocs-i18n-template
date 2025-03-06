@@ -1,17 +1,18 @@
 import '@/styles/global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
+
 import { I18nProvider, type Translations } from 'fumadocs-ui/i18n';
- 
-const zhHans: Partial<Translations> = {
+import { RootProvider } from 'fumadocs-ui/provider';
+
+const zhCn: Partial<Translations> = {
   search: '簡體中文',
   // other translations
 };
 
-const zhHant: Partial<Translations> = {
+const zhTw: Partial<Translations> = {
   search: '繁體中文',
   // other translations
 };
- 
+
 // available languages that will be displayed on UI
 // make sure `locale` is consistent with your i18n config
 const locales = [
@@ -21,14 +22,14 @@ const locales = [
   },
   {
     name: 'Simplified Chinese',
-    locale: 'zh-hans',
+    locale: 'zh-cn',
   },
   {
     name: 'Traditional Chinese',
-    locale: 'zh-hant',
+    locale: 'zh-tw',
   },
 ];
- 
+
 export default async function RootLayout({
   params,
   children,
@@ -37,14 +38,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const lang = (await params).lang;
- 
+
   return (
     <html lang={lang}>
       <body>
         <I18nProvider
           locale={lang}
           locales={locales}
-          translations={{ zhHans,zhHant }[lang]}
+          translations={{ zhCn, zhTw }[lang]}
         >
           <RootProvider>{children}</RootProvider>
         </I18nProvider>
