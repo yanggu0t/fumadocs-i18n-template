@@ -8,11 +8,13 @@ import {
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 
-export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ lang: string; slug?: string[] }>;
 }) {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
+  const { slug, lang } = await params;
+  const page = source.getPage(slug, lang);
   if (!page) notFound();
 
   const MDX = page.data.body;
@@ -32,11 +34,13 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; slug?: string[] }>;
 }) {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
+  const { slug, lang } = await params;
+  const page = source.getPage(slug, lang);
   if (!page) notFound();
 
   return {

@@ -4,6 +4,8 @@
     "": {
       "name": "snekroll-docs",
       "dependencies": {
+        "@orama/orama": "^3.1.1",
+        "@orama/tokenizers": "^3.1.1",
         "fumadocs-core": "15.0.15",
         "fumadocs-mdx": "11.5.6",
         "fumadocs-ui": "15.0.15",
@@ -153,6 +155,8 @@
     "@nodelib/fs.walk": ["@nodelib/fs.walk@1.2.8", "", { "dependencies": { "@nodelib/fs.scandir": "2.1.5", "fastq": "^1.6.0" } }, "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg=="],
 
     "@orama/orama": ["@orama/orama@3.1.1", "", {}, "sha512-w60E72VyWk4QeGy5j0Nm6z4BYVu2MMgtXi8dE/kVluxvz1JVtU9fPXKUW6E0bfrpN+LQM/2w5Jq5v6stl+V0dQ=="],
+
+    "@orama/tokenizers": ["@orama/tokenizers@3.1.1", "", { "dependencies": { "@orama/orama": "3.1.1" } }, "sha512-+l76XwYOlw84TSQMa0eViqfFl9h531ADPasZrqNU6EJdXqHqNCxAL73o7TRtuhhy4AcZIgx6vnFCXLVZlp93Sw=="],
 
     "@radix-ui/number": ["@radix-ui/number@1.1.0", "", {}, "sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ=="],
 

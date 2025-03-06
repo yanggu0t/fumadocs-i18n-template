@@ -1,0 +1,39 @@
+{
+  "endOfLine": "lf",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/app/(.*)$",
+    "^@/assets/(.*)$",
+    "^@/components/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/config/(.*)$",
+    "^@/context/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/locales/(.*)$",
+    "^@/stores",
+    "^@/stores/(.*)$",
+    "^@/server",
+    "^@/server/(.*)$",
+    "^@/service/(.*)$",
+    "^@/types/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/utils/(.*)$",
+    "",
+    "^@/styles/(.*)$",
+    "^.+\\.css$",
+    "",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ]
+}
